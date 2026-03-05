@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easyfind — Personvernerklæring / Privacy Policy</title>
+<meta name="description" content="Personvernerklæring for Easyfind-appen, utviklet av Salia AS.">
+<link rel="icon" type="image/svg+xml" href="/easyfind-icon.svg">
+<link rel="apple-touch-icon" href="/easyfind-icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;550;600;650;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1A6B7A;--warm:#B85A30;--sage:#5A8A7A;--gold:#C89040;--text:#2A3A3A;--text2:#4a5450;--text3:#7a8480;--text4:#a5aca8;--bg:#FDFCF9;--bg-warm:#F5F0EA;--line:#ddd8d0;--line-f:#e8e4dc;--white:#fff}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+.mono{font-family:'JetBrains Mono',monospace}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(252,251,249,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--line-f)}
+.nav-inner{max-width:1060px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;height:56px}
+.nav-logo{display:flex;align-items:center;gap:9px;font-weight:600;font-size:16px;letter-spacing:-.02em;text-decoration:none;color:var(--text)}
+.nav-logo-icon{width:36px;height:36px;border-radius:9px;background:var(--primary);display:flex;align-items:center;justify-content:center}
+.lang-toggle{display:flex;background:var(--bg-warm);border-radius:6px;padding:2px;border:1px solid var(--line-f)}
+.lang-btn{font-family:'Inter',sans-serif;font-size:11px;border:none;padding:4px 8px;border-radius:4px;cursor:pointer;transition:all .15s;background:transparent;color:var(--text4);font-weight:400}
+.lang-btn.active{background:var(--white);color:var(--text);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.back-link{font-size:13px;color:var(--text3);text-decoration:none;transition:color .15s}
+.back-link:hover{color:var(--text)}
+
+main{max-width:720px;margin:0 auto;padding:100px 28px 80px}
+h1{font-size:clamp(28px,4vw,38px);font-weight:700;letter-spacing:-.03em;margin-bottom:8px}
+.updated{font-size:13px;color:var(--text4);margin-bottom:32px}
+.intro{font-size:16px;color:var(--text2);line-height:1.7;margin-bottom:48px}
+
+.section{margin-bottom:40px}
+.section-num{font-size:11px;color:var(--primary);margin-bottom:8px;display:block}
+.section h2{font-size:20px;font-weight:700;margin-bottom:10px}
+.section p{font-size:15px;color:var(--text2);line-height:1.7;margin-bottom:12px}
+.section ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.section li{font-size:14px;color:var(--text2);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.section li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);margin-top:7px;flex-shrink:0}
+
+.gdpr-badge{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:10px;background:var(--bg-warm);border:1px solid var(--line-f);margin-top:32px}
+.gdpr-badge svg{flex-shrink:0}
+.gdpr-badge span{font-size:13px;color:var(--text3)}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="nav-inner">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"><svg width="24" height="24" viewBox="0 0 120 120" fill="none"><rect x="22" y="20" width="42" height="56" rx="5" stroke="#fff" stroke-width="2.5" opacity=".35" fill="none"/><defs><clipPath id="pg"><circle cx="60" cy="56" r="22"/></clipPath></defs><g clip-path="url(#pg)"><rect x="22" y="20" width="42" height="56" rx="5" stroke="#fff" stroke-width="3.5" fill="none"/><rect x="32" y="34" width="22" height="4" rx="2" fill="#fff"/><rect x="32" y="42" width="16" height="4" rx="2" fill="#fff"/><rect x="32" y="50" width="20" height="4" rx="2" fill="#fff"/></g><circle cx="60" cy="56" r="22" stroke="#fff" stroke-width="3.5" fill="none"/><line x1="76" y1="72" x2="92" y2="88" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></div>
+    easyfind
+  </a>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('no')">NO</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="/" class="back-link" id="backLink">← Tilbake</a>
+  </div>
+</div>
+</nav>
+
+<main id="content"></main>
+
+<script>
+let lang = 'no';
+const content = {
+  no: {
+    title: "Personvernerklæring",
+    updated: "Sist oppdatert: mars 2026",
+    back: "← Tilbake",
+    intro: "Denne personvernerklæringen beskriver hvordan Easyfind, utviklet av Salia AS, behandler personopplysninger. Vi ønsker å være åpne og tydelige om hva vi samler inn, hvorfor, og hvilke rettigheter du har.",
+    sections: [
+      { heading: "Behandlingsansvarlig", text: "Salia AS er behandlingsansvarlig for personopplysninger som behandles i Easyfind.", details: ["Salia AS","Organisasjonsnummer: 932 953 895","Kontakt: ida.slettebakken@easyfindapp.no"] },
+      { heading: "Hvilke data samler vi inn", text: "Vi samler kun inn opplysninger som er nødvendige for å gi brukere tilgang til appen. All brukerinformasjon registreres av kundens administrator — ikke av sluttbrukeren selv.", details: ["Navn","E-postadresse","Rolle / arbeidsgruppe (f.eks. Tekniker, Pilot, HMS)"] },
+      { heading: "Formål", text: "Personopplysningene brukes kun til å:", details: ["Gi brukere tilgang til relevante dokumenter og sjekklister","Styre rollebasert tilgang innenfor organisasjonen","Administrere brukerkontoer"] },
+      { heading: "Lagring og sikkerhet", text: "All data lagres på Microsoft Azure-servere i Europa. Vi bruker kryptert kommunikasjon (HTTPS) og Azure Active Directory for autentisering. Kun autoriserte administratorer hos kunden har tilgang til brukerdata." },
+      { heading: "Ingen AI, ingen tredjeparter", text: "Vi sender ingen data til AI-tjenester, analysetjenester eller tredjeparter. Dokumenter og brukerinformasjon forblir innenfor Easyfind-plattformen. Vi selger aldri data." },
+      { heading: "Sporing og informasjonskapsler", text: "Easyfind bruker ingen sporingsteknologi, ingen annonsering og ingen informasjonskapsler (cookies) for analyse eller markedsføring. Appen samler ikke inn posisjonsdata, enhetsdata eller bruksmønstre." },
+      { heading: "Dine rettigheter", text: "I henhold til GDPR (personvernforordningen) og norsk personopplysningslov har du rett til:", details: ["Innsyn — få vite hvilke opplysninger vi har om deg","Retting — få korrigert uriktige opplysninger","Sletting — be om at opplysningene dine slettes","Dataportabilitet — få utlevert dine data i et strukturert format","Klage — sende klage til Datatilsynet dersom du mener vi behandler opplysningene dine i strid med regelverket"] },
+      { heading: "Kontakt", text: "For spørsmål om personvern eller for å utøve dine rettigheter, kontakt oss på:", details: ["ida.slettebakken@easyfindapp.no"] },
+      { heading: "Rettslig grunnlag", text: "Behandlingen av personopplysninger i Easyfind er basert på GDPR artikkel 6(1)(b) — behandlingen er nødvendig for å oppfylle en avtale med kunden, og GDPR artikkel 6(1)(f) — berettiget interesse i å levere en sikker og funksjonell tjeneste." }
+    ],
+    gdpr: "GDPR-kompatibel · Personvernforordningen"
+  },
+  en: {
+    title: "Privacy Policy",
+    updated: "Last updated: March 2026",
+    back: "← Back",
+    intro: "This privacy policy describes how Easyfind, developed by Salia AS, processes personal data. We aim to be transparent about what we collect, why, and what rights you have.",
+    sections: [
+      { heading: "Data controller", text: "Salia AS is the data controller for personal data processed in Easyfind.", details: ["Salia AS","Organization number: 932 953 895","Contact: ida.slettebakken@easyfindapp.no"] },
+      { heading: "What data we collect", text: "We only collect information necessary to provide users with access to the app. All user information is registered by the customer's administrator — not by end users themselves.", details: ["Name","Email address","Role / work group (e.g. Technician, Pilot, HSE)"] },
+      { heading: "Purpose", text: "Personal data is used solely to:", details: ["Provide users access to relevant documents and checklists","Manage role-based access within the organization","Administer user accounts"] },
+      { heading: "Storage and security", text: "All data is stored on Microsoft Azure servers in Europe. We use encrypted communication (HTTPS) and Azure Active Directory for authentication. Only authorized administrators at the customer have access to user data." },
+      { heading: "No AI, no third parties", text: "We send no data to AI services, analytics services or third parties. Documents and user information remain within the Easyfind platform. We never sell data." },
+      { heading: "Tracking and cookies", text: "Easyfind uses no tracking technology, no advertising, and no cookies for analytics or marketing. The app does not collect location data, device data, or usage patterns." },
+      { heading: "Your rights", text: "Under the GDPR (General Data Protection Regulation) you have the right to:", details: ["Access — know what personal data we hold about you","Rectification — have incorrect data corrected","Erasure — request deletion of your data","Data portability — receive your data in a structured format","Complaint — file a complaint with the Norwegian Data Protection Authority (Datatilsynet) if you believe your data is processed unlawfully"] },
+      { heading: "Contact", text: "For questions about privacy or to exercise your rights, contact us at:", details: ["ida.slettebakken@easyfindapp.no"] },
+      { heading: "Legal basis", text: "Processing of personal data in Easyfind is based on GDPR Article 6(1)(b) — processing is necessary for the performance of a contract with the customer, and GDPR Article 6(1)(f) — legitimate interest in delivering a secure and functional service." }
+    ],
+    gdpr: "GDPR compliant · General Data Protection Regulation"
+  }
+};
+
+function render() {
+  const c = content[lang];
+  document.getElementById('backLink').textContent = c.back;
+  let html = `<h1>${c.title}</h1><p class="updated mono">${c.updated}</p><p class="intro">${c.intro}</p>`;
+  c.sections.forEach((s, i) => {
+    html += `<div class="section"><span class="mono section-num">${String(i+1).padStart(2,'0')}</span><h2>${s.heading}</h2><p>${s.text}</p>`;
+    if (s.details) html += `<ul>${s.details.map(d => `<li>${d}</li>`).join('')}</ul>`;
+    html += `</div>`;
+  });
+  html += `<div class="gdpr-badge"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>${c.gdpr}</span></div>`;
+  document.getElementById('content').innerHTML = html;
+}
+
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase() === l));
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
