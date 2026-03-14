@@ -514,6 +514,7 @@ function render() {
 
   // All data-no/data-en elements
   document.querySelectorAll('[data-no]').forEach(el => {
+    if (el.classList.contains('pricing-extra')) return;
     el.textContent = el.getAttribute('data-' + lang);
   });
 
