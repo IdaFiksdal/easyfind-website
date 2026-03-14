@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Easyfind — Finn riktig dokument. På sekunder.</title>
-<meta name="description" content="Mobiltilgang til manualer, sjekklister og forkortelser for teknikere og operatører. Laget av en flytekniker.">
+<meta name="description" content="Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontor og ledelse. Laget av en flytekniker.">
 <link rel="icon" type="image/svg+xml" href="/easyfind-icon.svg">
 <link rel="apple-touch-icon" href="/easyfind-icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,6 +111,36 @@ h2{font-size:clamp(28px,3.5vw,40px);font-weight:700;letter-spacing:-.03em;margin
 .pricing-features{display:flex;flex-direction:column;gap:10px;max-width:240px;margin:0 auto 24px;text-align:left}
 .pricing-feature{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--text2)}
 
+/* Pricing tiers */
+.pricing-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+.pricing-tier{padding:22px 18px;border-radius:12px;background:var(--white);border:1px solid var(--line-f);text-align:center;transition:all .25s}
+.pricing-tier:hover{border-color:var(--line);box-shadow:0 4px 16px rgba(0,0,0,.04);transform:translateY(-2px)}
+.pricing-tier.featured{border-color:var(--primary);border-width:2px;box-shadow:0 4px 20px rgba(26,107,122,.1)}
+.pricing-tier-range{font-size:12px;color:var(--text3);font-weight:500;margin-bottom:6px}
+.pricing-tier-price{font-size:clamp(26px,3vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--text)}
+.pricing-tier-unit{font-size:12px;color:var(--text4);font-weight:400;margin-top:2px}
+.pricing-minimum{font-size:13px;color:var(--text3);margin:6px 0 0;font-style:italic}
+
+/* Implementation packages */
+.impl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.impl-card{padding:24px 20px;border-radius:12px;background:var(--white);border:1px solid var(--line-f);text-align:left;transition:all .25s;position:relative}
+.impl-card:hover{border-color:var(--line);box-shadow:0 4px 16px rgba(0,0,0,.04);transform:translateY(-2px)}
+.impl-card.popular{border-top:3px solid var(--primary)}
+.impl-card-label{position:absolute;top:-1px;right:16px;font-size:10px;font-weight:600;color:var(--white);background:var(--primary);padding:2px 10px 4px;border-radius:0 0 6px 6px}
+.impl-card h4{font-size:17px;font-weight:650;margin-bottom:4px}
+.impl-card-price{font-size:22px;font-weight:700;color:var(--primary);margin-bottom:12px}
+.impl-card-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.impl-card-list li{font-size:13px;color:var(--text2);display:flex;align-items:flex-start;gap:7px;line-height:1.4}
+.pricing-extras{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.pricing-extra{font-size:13.5px;color:var(--text2);padding:10px 18px;background:var(--white);border:1px solid var(--line-f);border-radius:10px}
+.pricing-extra strong{font-weight:600;color:var(--text)}
+.pricing-extra a{color:var(--primary);font-weight:500;text-decoration:underline;text-underline-offset:2px}
+
+@media(max-width:640px){
+  .pricing-tiers{grid-template-columns:1fr}
+  .impl-grid{grid-template-columns:1fr}
+}
+
 /* Any industry */
 .industry{padding:72px 0;border-top:1px solid var(--line-f);position:relative;text-align:center}
 .industry-line{position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--primary),var(--warm));border-radius:2px}
@@ -210,7 +240,7 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
 <div class="w hero-inner">
   <div class="reveal"><p class="badge mono"><span class="badge-dot"></span> <span data-no="For luftfart, offshore og vedlikehold" data-en="For aviation, offshore and maintenance">For luftfart, offshore og vedlikehold</span></p></div>
   <div class="reveal" style="transition-delay:.06s"><h1><span data-no="Finn riktig dokument." data-en="Find the right document.">Finn riktig dokument.</span><br><span class="accent" data-no="På sekunder." data-en="In seconds.">På sekunder.</span></h1></div>
-  <div class="reveal" style="transition-delay:.12s"><p class="hero-desc" data-no="Mobiltilgang til manualer, sjekklister og forkortelser for teknikere og operatører. Verktøy, sjekklister og forkortelser fungerer også offline." data-en="Mobile access to manuals, checklists and abbreviations for technicians and operators. Tools, checklists and abbreviations also work offline.">Mobiltilgang til manualer, sjekklister og forkortelser for teknikere og operatører. Verktøy, sjekklister og forkortelser fungerer også offline.</p></div>
+  <div class="reveal" style="transition-delay:.12s"><p class="hero-desc" data-no="Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline." data-en="Mobile access to manuals, checklists and abbreviations for your entire organization — technicians, pilots, office staff, planners and management. Also works offline.">Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline.</p></div>
   <div class="reveal" style="transition-delay:.16s"><p class="hero-tagline" data-no="Laget av en flytekniker som var lei av å lete." data-en="Built by an aviation technician who was tired of searching.">Laget av en flytekniker som var lei av å lete.</p></div>
   <div class="reveal" style="transition-delay:.2s">
     <div class="btn-row">
@@ -312,20 +342,54 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
 
 <!-- Pricing -->
 <section class="section section-warm" id="priser">
-<div style="max-width:480px;margin:0 auto;padding:0 28px;text-align:center">
+<div class="w" style="max-width:780px;text-align:center">
   <div class="reveal">
     <span class="mono section-badge badge-warm" data-no="Priser" data-en="Pricing">Priser</span>
-    <h2 data-no="Enkel prising" data-en="Simple pricing">Enkel prising</h2>
-    <p style="font-size:15.5px;color:var(--text3);margin-bottom:36px" data-no="Én plan. Alle kjernefunksjoner inkludert. Vi kan tilpasse og bygge nye funksjoner etter deres behov." data-en="One plan. All core features included. We can customize and build new features based on your needs.">Én plan. Alle kjernefunksjoner inkludert. Vi kan tilpasse og bygge nye funksjoner etter deres behov.</p>
+    <h2 data-no="Enkel, transparent prising" data-en="Simple, transparent pricing">Enkel, transparent prising</h2>
+    <p style="font-size:15.5px;color:var(--text3);margin-bottom:36px" data-no="Per bruker, per måned. Ingen skjulte avgifter." data-en="Per user, per month. No hidden fees.">Per bruker, per måned. Ingen skjulte avgifter.</p>
   </div>
-  <div class="reveal" style="transition-delay:.08s">
-    <div class="pricing-card">
-      <span class="mono" style="font-size:11px;color:var(--text4)" data-no="bedriftsabonnement" data-en="enterprise subscription">bedriftsabonnement</span>
-      <h3 style="font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.03em;margin:12px 0 4px" data-no="Tilpasset bedriften" data-en="Tailored to your company">Tilpasset bedriften</h3>
-      <p style="font-size:13px;color:var(--text3);margin-bottom:24px" data-no="Per bruker / måned · tilpasset bedriftens størrelse" data-en="Per user / month · tailored to company size">Per bruker / måned · tilpasset bedriftens størrelse</p>
-      <div class="pricing-features" id="pricingFeatures"></div>
-      <a class="btn-primary" onclick="scrollToEl('#kontakt')" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
+
+  <!-- User pricing tiers -->
+  <div class="reveal" style="transition-delay:.06s">
+    <div class="pricing-tiers">
+      <div class="pricing-tier">
+        <div class="pricing-tier-range" data-no="1–20 brukere" data-en="1–20 users">1–20 brukere</div>
+        <div class="pricing-tier-price">149 <span style="font-size:16px;font-weight:500">kr</span></div>
+        <div class="pricing-tier-unit" data-no="per bruker / mnd" data-en="per user / mo">per bruker / mnd</div>
+      </div>
+      <div class="pricing-tier featured">
+        <div class="pricing-tier-range" data-no="21–100 brukere" data-en="21–100 users">21–100 brukere</div>
+        <div class="pricing-tier-price">99 <span style="font-size:16px;font-weight:500">kr</span></div>
+        <div class="pricing-tier-unit" data-no="per bruker / mnd" data-en="per user / mo">per bruker / mnd</div>
+      </div>
+      <div class="pricing-tier">
+        <div class="pricing-tier-range" data-no="100+ brukere" data-en="100+ users">100+ brukere</div>
+        <div class="pricing-tier-price">69 <span style="font-size:16px;font-weight:500">kr</span></div>
+        <div class="pricing-tier-unit" data-no="per bruker / mnd" data-en="per user / mo">per bruker / mnd</div>
+      </div>
     </div>
+    <p class="pricing-minimum" data-no="Minimum 999 kr/mnd" data-en="Minimum 999 kr/mo">Minimum 999 kr/mnd</p>
+  </div>
+
+  <!-- Implementation packages -->
+  <div class="reveal" style="transition-delay:.12s">
+    <h3 style="font-size:18px;font-weight:650;margin-top:48px;margin-bottom:4px" data-no="Implementeringspakker" data-en="Implementation packages">Implementeringspakker</h3>
+    <p style="font-size:14px;color:var(--text3);margin-bottom:20px" data-no="Engangskostnad for oppsett og opplæring" data-en="One-time cost for setup and training">Engangskostnad for oppsett og opplæring</p>
+    <div class="impl-grid" id="implGrid"></div>
+  </div>
+
+  <!-- Extras -->
+  <div class="reveal" style="transition-delay:.18s">
+    <div class="pricing-extras">
+      <div class="pricing-extra" data-no="<strong>Tilpasset utvikling:</strong> 1 200 kr/time" data-en="<strong>Custom development:</strong> 1 200 kr/hr">
+        <strong>Tilpasset utvikling:</strong> 1 200 kr/time
+      </div>
+      <div class="pricing-extra" id="featureRequestExtra"></div>
+    </div>
+  </div>
+
+  <div class="reveal" style="transition-delay:.22s;margin-top:36px">
+    <a class="btn-primary" onclick="scrollToEl('#kontakt')" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
   </div>
 </div>
 </section>
@@ -380,8 +444,8 @@ const chkSvg = '<svg class="chk" width="16" height="16" fill="none" viewBox="0 0
 
 const data = {
   features: {
-    no: [["Dokumentsøk","Fuzzy matching finner riktig resultat på tvers av manualer, prosedyrer og forkortelser — selv med skrivefeil."],["Seksjonsnavigering","Gå direkte til riktig side i en manual. Ingen leting gjennom hundrevis av sider."],["QR-skanning","Skann QR-koder på utstyr. Åpner tilhørende dokument direkte i appen."],["Sjekklister","Digitale sjekklister med signatur, bilder og automatisk PDF-generering."],["Offline","Søk, sjekklister og forkortelser fungerer uten nett. Dokumenter krever tilkobling."],["Tilgangskontroll","Arbeidsgrupper styrer hvem som ser hva. Teknikere, piloter, HMS — hver sin visning."]],
-    en: [["Document search","Fuzzy matching finds the right result across manuals, procedures and abbreviations — even with typos."],["Section navigation","Jump directly to the right page in a manual. No scrolling through hundreds of pages."],["QR scanning","Scan QR codes on equipment. Opens the corresponding document directly in the app."],["Checklists","Digital checklists with signature, photos and automatic PDF generation."],["Offline","Search, checklists and abbreviations work without internet. Documents require connectivity."],["Access control","Work groups control who sees what. Technicians, pilots, HSE — each with their own view."]]
+    no: [["Dokumentsøk","Fuzzy matching finner riktig resultat på tvers av manualer, prosedyrer og forkortelser — selv med skrivefeil."],["Seksjonsnavigering","Gå direkte til riktig side i en manual. Ingen leting gjennom hundrevis av sider."],["QR-skanning","Skann QR-koder på utstyr. Åpner tilhørende dokument direkte i appen."],["Sjekklister","Digitale sjekklister med signatur, bilder og automatisk PDF-generering."],["Offline","Søk, sjekklister og forkortelser fungerer uten nett. Dokumenter krever tilkobling."],["Tilgangskontroll","Arbeidsgrupper styrer hvem som ser hva. Teknikere, piloter, kontor, planleggere og ledelse — hver sin visning."]],
+    en: [["Document search","Fuzzy matching finds the right result across manuals, procedures and abbreviations — even with typos."],["Section navigation","Jump directly to the right page in a manual. No scrolling through hundreds of pages."],["QR scanning","Scan QR codes on equipment. Opens the corresponding document directly in the app."],["Checklists","Digital checklists with signature, photos and automatic PDF generation."],["Offline","Search, checklists and abbreviations work without internet. Documents require connectivity."],["Access control","Work groups control who sees what. Technicians, pilots, office staff, planners and management — each with their own view."]]
   },
   steps: {
     no: [["Last opp","Manualer, sjekklister og prosedyrer legges inn via admin-panelet."],["Logg inn","Ansatte får tilgang basert på rolle og arbeidsgruppe."],["Søk eller skann","Finn dokumenter med søk, eller skann QR-koder på utstyr."],["Dokumenter","Fullfør sjekklister, signer digitalt og eksporter som PDF."]],
@@ -391,13 +455,25 @@ const data = {
     no: ["Null AI-behandling av dokumenter","Ingen deling med tredjeparter","Rollebasert tilgangskontroll","Kunden eier all data","Plattform-intern lagring"],
     en: ["Zero AI processing of documents","No third-party data sharing","Role-based access control","Customer owns all data","Platform-internal storage"]
   },
-  pricing: {
-    no: ["Manualer og dokumenter","Verktøy","Offline søk og sjekklister","QR-skanning","Sjekklister med signatur","Admin-panel","Implementeringsstøtte","Tilpasning etter behov"],
-    en: ["Manuals and documents","Tools","Offline search and checklists","QR scanning","Checklists with signature","Admin panel","Implementation support","Customization as needed"]
+  impl: {
+    no: [
+      ["Basis","4 900 kr",["Oppsett av plattform og admin-panel","1 time opplæring (video)","Inntil 50 dokumenter lastet opp"]],
+      ["Standard","9 900 kr",["Alt i Basis","2 timer opplæring","Inntil 200 dokumenter lastet opp","QR-koder generert og levert"]],
+      ["Enterprise","24 900 kr",["Alt i Standard","On-site opplæring","Dedikert support første måned","Ubegrenset antall dokumenter"]]
+    ],
+    en: [
+      ["Basis","4 900 kr",["Platform and admin panel setup","1 hour training (video)","Up to 50 documents uploaded"]],
+      ["Standard","9 900 kr",["Everything in Basis","2 hours training","Up to 200 documents uploaded","QR codes generated and delivered"]],
+      ["Enterprise","24 900 kr",["Everything in Standard","On-site training","Dedicated support for the first month","Unlimited documents"]]
+    ]
+  },
+  featureRequest: {
+    no: '<strong>Feature requests?</strong> <a href="mailto:support@easyfindapp.no">support@easyfindapp.no</a>',
+    en: '<strong>Feature requests?</strong> <a href="mailto:support@easyfindapp.no">support@easyfindapp.no</a>'
   },
   industry: {
-    no: 'Vi bygget Easyfind for luftfart og offshore — men verktøyet fungerer for <span class="hl">enhver bransje</span> der ansatte trenger rask tilgang til prosedyrer, manualer eller sjekklister. Shipping, industri, helse, energi — hvis du har dokumenter, har vi en app.',
-    en: 'We built Easyfind for aviation and offshore — but the tool works for <span class="hl">any industry</span> where employees need quick access to procedures, manuals or checklists. Shipping, manufacturing, healthcare, energy — if you have documents, we have an app.'
+    no: 'Vi bygget Easyfind for luftfart og offshore — men verktøyet fungerer for <span class="hl">enhver bransje</span> der hele organisasjonen trenger rask tilgang til prosedyrer, manualer eller sjekklister. Fra teknikere i felt til planleggere på kontoret og ledelsen i møterommet.',
+    en: 'We built Easyfind for aviation and offshore — but the tool works for <span class="hl">any industry</span> where the entire organization needs quick access to procedures, manuals or checklists. From technicians in the field to planners at the office and management in the boardroom.'
   }
 };
 
@@ -417,9 +493,21 @@ function render() {
   const sl = document.getElementById('securityList');
   sl.innerHTML = data.security[lang].map(s => `<div class="security-item">${chkSvg}<span>${s}</span></div>`).join('');
 
-  // Pricing
-  const pf = document.getElementById('pricingFeatures');
-  pf.innerHTML = data.pricing[lang].map(f => `<div class="pricing-feature">${chkSvg}<span>${f}</span></div>`).join('');
+  // Implementation packages
+  const ig = document.getElementById('implGrid');
+  ig.innerHTML = data.impl[lang].map((p,i) => `<div class="impl-card${i===1?' popular':''}">
+    ${i===1?'<span class="impl-card-label">Popular</span>':''}
+    <h4>${p[0]}</h4>
+    <div class="impl-card-price">${p[1]}</div>
+    <ul class="impl-card-list">${p[2].map(li => `<li>${chkSvg}<span>${li}</span></li>`).join('')}</ul>
+  </div>`).join('');
+
+  // Feature request extra
+  document.getElementById('featureRequestExtra').innerHTML = data.featureRequest[lang];
+
+  // Pricing extras (custom dev) — update via data attributes
+  const extrasEl = document.querySelector('.pricing-extra[data-no]');
+  if (extrasEl) extrasEl.innerHTML = extrasEl.getAttribute('data-' + lang);
 
   // Industry
   document.getElementById('industryText').innerHTML = data.industry[lang];
