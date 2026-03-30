@@ -61,14 +61,23 @@ h1 .accent{color:var(--sage)}
 .btn-secondary{font-size:15px;font-weight:500;color:var(--text2);padding:12px 28px;border-radius:10px;background:var(--white);border:1.5px solid var(--line);transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .btn-secondary:hover{border-color:var(--text4);transform:translateY(-1px)}
 
-/* Phones */
-.phones{margin-top:64px;display:flex;justify-content:center;align-items:flex-end;position:relative;min-height:420px;padding-bottom:20px}
-.phone{width:230px;border-radius:32px;padding:7px;background:linear-gradient(145deg,#e8e6e2,#d8d5d0);box-shadow:0 30px 70px rgba(42,58,58,.18),0 10px 24px rgba(42,58,58,.08),0 0 40px rgba(26,107,122,.07);border:1px solid rgba(26,107,122,.08);position:relative}
-.phone-notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:56px;height:14px;background:linear-gradient(145deg,#e8e6e2,#d8d5d0);border-radius:0 0 10px 10px;z-index:5}
-.phone-btn{position:absolute;right:-2px;top:85px;width:3px;height:24px;background:#ccc9c4;border-radius:0 2px 2px 0}
-.phone-screen{border-radius:25px;overflow:hidden;aspect-ratio:9/19.3;background:var(--white)}
-.phone-1{transform:rotate(-5deg) translateX(20px);z-index:1}
-.phone-2{transform:rotate(3deg) translateX(-20px) translateY(-16px);z-index:2}
+/* Hero devices */
+.hero-devices{margin-top:64px;display:flex;justify-content:center;align-items:flex-end;position:relative;padding-bottom:20px}
+.device-phone{width:220px;flex-shrink:0;position:relative;z-index:2}
+.device-phone .device-frame{background:#1a1a1a;border-radius:40px;padding:8px;border:1px solid #333;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.22),0 10px 30px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.06)}
+.device-phone .device-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:72px;height:20px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:5;display:flex;align-items:center;justify-content:center}
+.device-phone .device-notch::before{content:'';width:7px;height:7px;border-radius:50%;background:#0a0a0a;border:1px solid #222}
+.device-phone .device-screen{border-radius:32px;overflow:hidden;aspect-ratio:9/19.3;background:#000}
+.device-phone .device-screen img{width:100%;height:100%;object-fit:cover;display:block}
+.device-laptop{position:relative;z-index:1;margin-left:-40px;align-self:center}
+.device-laptop .laptop-frame{width:420px;border-radius:12px;overflow:hidden;background:#1a1a1a;border:1px solid #333;box-shadow:0 30px 80px rgba(0,0,0,.18),0 10px 30px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.06)}
+.laptop-titlebar{height:32px;background:#252525;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #333}
+.laptop-dot{width:10px;height:10px;border-radius:50%}
+.laptop-dot-r{background:#ff5f57}
+.laptop-dot-y{background:#febc2e}
+.laptop-dot-g{background:#28c840}
+.laptop-screen{aspect-ratio:16/10;overflow:hidden;background:#1a2a2a}
+.laptop-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
 /* Value prop */
 .value-prop{padding:48px 0 64px;text-align:center}
@@ -165,29 +174,16 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* Phone screen content */
-.ps{width:100%;height:100%;display:flex;flex-direction:column;font-family:'Inter',sans-serif}
-.ps-bar{padding:10px 16px 4px;display:flex;justify-content:space-between;font-size:9px;color:var(--text4)}
-.ps-title{padding:8px 16px 10px;font-size:17px;font-weight:700}
-.ps-divider{height:1px;background:var(--line-f)}
-.ps-content{flex:1;padding:10px 14px;display:flex;flex-direction:column;gap:7px;overflow:hidden}
-.ps-search{padding:9px 10px;background:var(--bg-warm);border-radius:8px;display:flex;align-items:center;gap:8px;border:1px solid var(--line-f)}
-.ps-item{padding:10px 11px;border:1px solid var(--line-f);border-radius:8px}
-.ps-item-title{font-size:11px;font-weight:600;margin-bottom:2px}
-.ps-item-sub{font-size:9px;color:var(--text4)}
-.ps-tabs{border-top:1px solid var(--line-f);padding:6px 6px 10px;display:flex;justify-content:space-around}
-.ps-tab{text-align:center;opacity:.35;font-size:7px}
-.ps-tab.active{opacity:1}
-.ps-tab-dot{width:6px;height:6px;border-radius:1px;margin:0 auto 2px}
-.ps-highlight{padding:10px 11px;background:rgba(26,107,122,.05);border-radius:8px}
-.ps-checklist{padding:12px 11px;border:1px solid var(--line-f);border-radius:8px;display:flex;align-items:center;gap:10px}
-.ps-cl-icon{width:32px;height:32px;border-radius:8px;background:rgba(26,107,122,.06);display:flex;align-items:center;justify-content:center}
-
 @media(max-width:768px){
   .nav-links,.nav-cta-wrap{display:none!important}
   .hamburger{display:block!important}
-  .phones{flex-direction:row;min-height:320px}
-  .phone{width:170px}
+  .hero-devices{flex-direction:column;align-items:center;gap:24px}
+  .device-phone{width:180px}
+  .device-phone .device-frame{border-radius:32px;padding:6px}
+  .device-phone .device-screen{border-radius:26px}
+  .device-phone .device-notch{width:56px;height:16px}
+  .device-laptop{margin-left:0}
+  .device-laptop .laptop-frame{width:100%;max-width:360px}
   .security-grid{grid-template-columns:1fr}
 }
 </style>
@@ -248,39 +244,22 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
       <a class="btn-secondary" onclick="scrollToEl('#funksjoner')" data-no="Se funksjoner" data-en="See features">Se funksjoner</a>
     </div>
   </div>
-  <div class="reveal phones" style="transition-delay:.26s">
-    <div class="phone phone-1">
-      <div class="phone-notch"></div><div class="phone-btn"></div>
-      <div class="phone-screen"><div class="ps">
-        <div class="ps-bar"><span class="mono" style="font-size:9px">19:42</span><div style="display:flex;gap:3px"><div style="width:4px;height:4px;border-radius:50%;background:#5cb85c"></div></div></div>
-        <div class="ps-title">Tools</div><div class="ps-divider"></div>
-        <div class="ps-content">
-          <div style="font-size:10px;color:var(--text3);margin-bottom:2px">Search by job, ATA, aircraft, or tool.</div>
-          <div class="ps-search"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="var(--text4)" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span style="font-size:11px;color:var(--text4)">mr</span></div>
-          <div class="ps-item"><div class="ps-item-title">MR Beanie Inst.</div><div class="ps-item-sub">AW189 · Tools</div></div>
-          <div class="ps-item"><div class="ps-item-title">MR Swashplate boot</div><div class="ps-item-sub">AW189 · Tools</div></div>
-          <div class="ps-item"><div class="ps-item-title">Removal of MR PCR</div><div class="ps-item-sub">AW189 · Procedures</div></div>
-          <div class="ps-item"><div class="ps-item-title">Torque check MRH</div><div class="ps-item-sub">AW189 · Tools</div></div>
-        </div>
-        <div class="ps-tabs"><div class="ps-tab" style="font-size:7px">Manuals<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab active" style="font-size:7px;font-weight:600;color:var(--primary)">Tools<div class="ps-tab-dot" style="background:var(--primary)"></div></div><div class="ps-tab" style="font-size:7px">Proc.<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">Search<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">People<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">Checks<div class="ps-tab-dot" style="background:var(--text4)"></div></div></div>
-      </div></div>
+  <div class="reveal hero-devices" style="transition-delay:.26s">
+    <div class="device-phone">
+      <div class="device-frame">
+        <div class="device-notch"></div>
+        <div class="device-screen"><img src="phone-screenshot.jpg" alt="Easyfind mobile app"></div>
+      </div>
     </div>
-    <div class="phone phone-2">
-      <div class="phone-notch"></div><div class="phone-btn"></div>
-      <div class="phone-screen"><div class="ps">
-        <div class="ps-bar"><span class="mono" style="font-size:9px">19:42</span><div style="display:flex;gap:3px"><div style="width:4px;height:4px;border-radius:50%;background:#5cb85c"></div></div></div>
-        <div class="ps-title">Checklists</div><div class="ps-divider"></div>
-        <div class="ps-content">
-          <div class="ps-highlight"><span style="font-size:11px;font-weight:600;color:var(--primary)">Mine sjekklister</span></div>
-          <div style="font-size:10px;color:var(--text3);margin:2px 0">Select a checklist to fill out.</div>
-          <div class="ps-checklist">
-            <div class="ps-cl-icon"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-            <div style="flex:1"><div style="font-size:12px;font-weight:600">Own work inspection</div><div style="font-size:9px;color:var(--text4);margin-top:1px">1 category · 4 items</div></div>
-            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="var(--text4)" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
-          </div>
+    <div class="device-laptop">
+      <div class="laptop-frame">
+        <div class="laptop-titlebar">
+          <div class="laptop-dot laptop-dot-r"></div>
+          <div class="laptop-dot laptop-dot-y"></div>
+          <div class="laptop-dot laptop-dot-g"></div>
         </div>
-        <div class="ps-tabs"><div class="ps-tab" style="font-size:7px">Manuals<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">Tools<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">Proc.<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">Search<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab" style="font-size:7px">People<div class="ps-tab-dot" style="background:var(--text4)"></div></div><div class="ps-tab active" style="font-size:7px;font-weight:600;color:var(--primary)">Checks<div class="ps-tab-dot" style="background:var(--primary)"></div></div></div>
-      </div></div>
+        <div class="laptop-screen"><img src="laptop-screenshot.png" alt="Easyfind procedures search"></div>
+      </div>
     </div>
   </div>
 </div>
