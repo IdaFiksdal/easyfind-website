@@ -45,39 +45,48 @@ a{text-decoration:none;color:inherit}
 .mobile-cta{font-size:15px;font-weight:600;color:var(--white);background:var(--primary);padding:12px 0;border-radius:8px;text-align:center;margin-top:10px}
 
 /* Hero */
-.hero{padding-top:100px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 30%,var(--bg) 65%,var(--bg) 100%);pointer-events:none}
-.hero-dots{position:absolute;inset:0;opacity:.2;background-image:radial-gradient(var(--sage) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
-.hero-inner{position:relative;z-index:1;text-align:center}
-.badge{font-size:12px;color:var(--primary);display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(26,107,122,.1);border-radius:100px;margin-bottom:20px}
+.hero{padding:100px 0 0;position:relative}
+.hero-card{background:var(--primary);border-radius:24px;padding:64px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden;min-height:480px}
+.hero-card::before{content:'';position:absolute;inset:0;opacity:.08;background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.hero-text{position:relative;z-index:1}
+.badge{font-size:12px;color:var(--primary);display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--white);border-radius:100px;margin-bottom:20px;font-weight:500}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:var(--primary);display:inline-block}
-h1{font-size:clamp(38px,6.5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.045em;margin-bottom:16px}
-h1 .accent{color:var(--sage)}
-.hero-desc{font-size:clamp(16px,1.6vw,19px);color:var(--text2);line-height:1.6;max-width:480px;margin:0 auto 12px}
-.hero-tagline{font-size:14px;color:var(--text3);font-style:italic;margin-bottom:32px}
-.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+h1{font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.08;letter-spacing:-.04em;margin-bottom:16px;color:var(--white)}
+h1 .accent{color:rgba(255,255,255,.7)}
+.hero-desc{font-size:clamp(15px,1.3vw,17px);color:rgba(255,255,255,.82);line-height:1.6;max-width:440px;margin:0 0 10px}
+.hero-tagline{font-size:14px;color:rgba(255,255,255,.6);font-style:italic;margin-bottom:28px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-primary{font-size:15px;font-weight:600;color:var(--primary);background:var(--white);padding:12px 28px;border-radius:10px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.hero .btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+.hero .btn-secondary{font-size:15px;font-weight:500;color:var(--white);padding:12px 28px;border-radius:10px;background:transparent;border:1.5px solid rgba(255,255,255,.35);transition:all .2s}
+.hero .btn-secondary:hover{border-color:rgba(255,255,255,.7);transform:translateY(-1px)}
 .btn-primary{font-size:15px;font-weight:600;color:var(--white);background:var(--primary);padding:12px 28px;border-radius:10px;transition:all .2s;box-shadow:0 2px 8px rgba(26,107,122,.18)}
 .btn-primary:hover{background:var(--primary-light);transform:translateY(-2px);box-shadow:0 6px 16px rgba(26,107,122,.2)}
 .btn-secondary{font-size:15px;font-weight:500;color:var(--text2);padding:12px 28px;border-radius:10px;background:var(--white);border:1.5px solid var(--line);transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .btn-secondary:hover{border-color:var(--text4);transform:translateY(-1px)}
 
 /* Hero devices */
-.hero-devices{margin-top:64px;display:flex;justify-content:center;align-items:flex-end;position:relative;padding-bottom:20px}
-.device-phone{width:220px;flex-shrink:0;position:relative;z-index:2}
-.device-phone .device-frame{background:#1a1a1a;border-radius:40px;padding:8px;border:1px solid #333;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.22),0 10px 30px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.06)}
-.device-phone .device-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:72px;height:20px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:5;display:flex;align-items:center;justify-content:center}
+.hero-devices{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:400px}
+.device-tablet{position:relative;z-index:1}
+.device-tablet .tablet-frame{width:380px;background:#1a1a1a;border-radius:20px;padding:10px;border:1px solid #333;box-shadow:0 30px 80px rgba(0,0,0,.25),0 10px 30px rgba(0,0,0,.12)}
+.device-tablet .tablet-screen{border-radius:12px;overflow:hidden;background:#1a2a2a;aspect-ratio:4/3}
+.device-tablet .tablet-screen img{width:100%;height:100%;object-fit:contain;display:block;background:#1a2a2a}
+.device-phone{width:200px;flex-shrink:0;position:absolute;left:-30px;bottom:-20px;z-index:2}
+.device-phone .device-frame{background:#1a1a1a;border-radius:44px;padding:8px;border:1px solid #333;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.15)}
+.device-phone .device-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:68px;height:20px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:5;display:flex;align-items:center;justify-content:center}
 .device-phone .device-notch::before{content:'';width:7px;height:7px;border-radius:50%;background:#0a0a0a;border:1px solid #222}
-.device-phone .device-screen{border-radius:32px;overflow:hidden;aspect-ratio:9/19.3;background:#000}
-.device-phone .device-screen img{width:100%;height:100%;object-fit:cover;display:block}
-.device-laptop{position:relative;z-index:1;margin-left:-40px;align-self:center}
-.device-laptop .laptop-frame{width:420px;border-radius:12px;overflow:hidden;background:#1a1a1a;border:1px solid #333;box-shadow:0 30px 80px rgba(0,0,0,.18),0 10px 30px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.06)}
-.laptop-titlebar{height:32px;background:#252525;display:flex;align-items:center;padding:0 12px;gap:6px;border-bottom:1px solid #333}
-.laptop-dot{width:10px;height:10px;border-radius:50%}
-.laptop-dot-r{background:#ff5f57}
-.laptop-dot-y{background:#febc2e}
-.laptop-dot-g{background:#28c840}
-.laptop-screen{aspect-ratio:16/10;overflow:hidden;background:#1a2a2a}
-.laptop-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.device-phone .device-screen{border-radius:36px;overflow:hidden;aspect-ratio:9/19.3;background:#000}
+.device-phone .device-screen img{width:100%;height:100%;object-fit:contain;display:block;background:#1a2a2a}
+
+/* Hero entrance animations */
+@keyframes heroSlideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes heroSlideUpLarge{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.anim-badge{animation:heroSlideUp .7s ease-out .1s both}
+.anim-h1{animation:heroSlideUp .7s ease-out .2s both}
+.anim-desc{animation:heroSlideUp .7s ease-out .35s both}
+.anim-tail{animation:heroSlideUp .7s ease-out .5s both}
+.anim-tablet{animation:heroSlideUpLarge .7s ease-out .3s both}
+.anim-phone{animation:heroSlideUpLarge .7s ease-out .45s both}
 
 /* Value prop */
 .value-prop{padding:48px 0 64px;text-align:center}
@@ -174,16 +183,19 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+@media(max-width:900px){
+  .hero-card{grid-template-columns:1fr;padding:48px 32px;text-align:center}
+  .hero-desc{margin:0 auto 10px}
+  .btn-row{justify-content:center}
+  .hero-devices{min-height:auto;justify-content:center;margin-top:16px}
+  .device-tablet{display:none}
+  .device-phone{position:relative;left:auto;bottom:auto;width:200px}
+}
 @media(max-width:768px){
   .nav-links,.nav-cta-wrap{display:none!important}
   .hamburger{display:block!important}
-  .hero-devices{flex-direction:column;align-items:center;gap:24px}
-  .device-phone{width:180px}
-  .device-phone .device-frame{border-radius:32px;padding:6px}
-  .device-phone .device-screen{border-radius:26px}
-  .device-phone .device-notch{width:56px;height:16px}
-  .device-laptop{margin-left:0}
-  .device-laptop .laptop-frame{width:100%;max-width:360px}
+  .hero{padding:80px 0 0}
+  .hero-card{padding:40px 24px;border-radius:20px}
   .security-grid{grid-template-columns:1fr}
 }
 </style>
@@ -231,34 +243,31 @@ footer{padding:20px 0;border-top:1px solid var(--line-f)}
 
 <!-- Hero -->
 <section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-dots"></div>
-<div class="w hero-inner">
-  <div class="reveal"><p class="badge mono"><span class="badge-dot"></span> <span data-no="For luftfart, offshore og vedlikehold" data-en="For aviation, offshore and maintenance">For luftfart, offshore og vedlikehold</span></p></div>
-  <div class="reveal" style="transition-delay:.06s"><h1><span data-no="Finn riktig dokument." data-en="Find the right document.">Finn riktig dokument.</span><br><span class="accent" data-no="På sekunder." data-en="In seconds.">På sekunder.</span></h1></div>
-  <div class="reveal" style="transition-delay:.12s"><p class="hero-desc" data-no="Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline." data-en="Mobile access to manuals, checklists and abbreviations for your entire organization — technicians, pilots, office staff, planners and management. Also works offline.">Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline.</p></div>
-  <div class="reveal" style="transition-delay:.16s"><p class="hero-tagline" data-no="Laget av en flytekniker som var lei av å lete." data-en="Built by an aviation technician who was tired of searching.">Laget av en flytekniker som var lei av å lete.</p></div>
-  <div class="reveal" style="transition-delay:.2s">
-    <div class="btn-row">
-      <a class="btn-primary" onclick="scrollToEl('#kontakt')" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
-      <a class="btn-secondary" onclick="scrollToEl('#funksjoner')" data-no="Se funksjoner" data-en="See features">Se funksjoner</a>
-    </div>
-  </div>
-  <div class="reveal hero-devices" style="transition-delay:.26s">
-    <div class="device-phone">
-      <div class="device-frame">
-        <div class="device-notch"></div>
-        <div class="device-screen"><img src="phone-screenshot.jpg" alt="Easyfind mobile app"></div>
+<div class="w">
+  <div class="hero-card">
+    <div class="hero-text">
+      <div class="anim-badge"><p class="badge mono"><span class="badge-dot"></span> <span data-no="For luftfart, offshore og vedlikehold" data-en="For aviation, offshore and maintenance">For luftfart, offshore og vedlikehold</span></p></div>
+      <div class="anim-h1"><h1><span data-no="Finn riktig dokument." data-en="Find the right document.">Finn riktig dokument.</span><br><span class="accent" data-no="På sekunder." data-en="In seconds.">På sekunder.</span></h1></div>
+      <div class="anim-desc"><p class="hero-desc" data-no="Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline." data-en="Mobile access to manuals, checklists and abbreviations for your entire organization — technicians, pilots, office staff, planners and management. Also works offline.">Mobiltilgang til manualer, sjekklister og forkortelser for hele organisasjonen — teknikere, piloter, kontorfolk, planleggere og ledelse. Fungerer også offline.</p></div>
+      <div class="anim-tail">
+        <p class="hero-tagline" data-no="Laget av en flytekniker som var lei av å lete." data-en="Built by an aviation technician who was tired of searching.">Laget av en flytekniker som var lei av å lete.</p>
+        <div class="btn-row">
+          <a class="btn-primary" onclick="scrollToEl('#kontakt')" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
+          <a class="btn-secondary" onclick="scrollToEl('#funksjoner')" data-no="Se funksjoner" data-en="See features">Se funksjoner</a>
+        </div>
       </div>
     </div>
-    <div class="device-laptop">
-      <div class="laptop-frame">
-        <div class="laptop-titlebar">
-          <div class="laptop-dot laptop-dot-r"></div>
-          <div class="laptop-dot laptop-dot-y"></div>
-          <div class="laptop-dot laptop-dot-g"></div>
+    <div class="hero-devices">
+      <div class="device-tablet anim-tablet">
+        <div class="tablet-frame">
+          <div class="tablet-screen"><img src="tablet-screenshot.png" alt="Easyfind tablet view"></div>
         </div>
-        <div class="laptop-screen"><img src="laptop-screenshot.png" alt="Easyfind procedures search"></div>
+      </div>
+      <div class="device-phone anim-phone">
+        <div class="device-frame">
+          <div class="device-notch"></div>
+          <div class="device-screen"><img src="phone-screenshot.jpg" alt="Easyfind mobile app"></div>
+        </div>
       </div>
     </div>
   </div>
