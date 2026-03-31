@@ -46,8 +46,8 @@ a{text-decoration:none;color:inherit}
 
 /* Hero */
 .hero{padding-top:100px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 30%,var(--bg) 65%,var(--bg) 100%);pointer-events:none}
-.hero-dots{position:absolute;inset:0;opacity:.2;background-image:radial-gradient(var(--sage) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+.hero-bg{position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 30%,var(--bg) 65%,var(--bg) 100%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;z-index:0;opacity:.2;background-image:radial-gradient(var(--sage) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
 .hero-inner{position:relative;z-index:1;text-align:center}
 .badge{font-size:12px;color:var(--primary);display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:rgba(26,107,122,.1);border-radius:100px;margin-bottom:20px}
 .badge-dot{width:5px;height:5px;border-radius:50%;background:var(--primary);display:inline-block}
@@ -62,7 +62,7 @@ h1 .accent{color:var(--sage)}
 .btn-secondary:hover{border-color:var(--text4);transform:translateY(-1px)}
 
 /* Phones */
-.phones{margin-top:64px;display:flex;justify-content:center;align-items:flex-end;position:relative;min-height:420px;padding-bottom:20px}
+.phones{margin-top:64px;display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:2;min-height:420px;padding-bottom:20px}
 .phone{width:230px;border-radius:32px;padding:7px;background:linear-gradient(145deg,#e8e6e2,#d8d5d0);box-shadow:0 30px 70px rgba(42,58,58,.18),0 10px 24px rgba(42,58,58,.08),0 0 40px rgba(26,107,122,.07);border:1px solid rgba(26,107,122,.08);position:relative}
 .phone-notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:56px;height:14px;background:linear-gradient(145deg,#e8e6e2,#d8d5d0);border-radius:0 0 10px 10px;z-index:5}
 .phone-btn{position:absolute;right:-2px;top:85px;width:3px;height:24px;background:#ccc9c4;border-radius:0 2px 2px 0}
